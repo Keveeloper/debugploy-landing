@@ -15,20 +15,20 @@ export default function Hero() {
             Desbloquea el verdadero potencial de tu <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal to-brand-teal-dark">Ecosistema Salesforce</span>
           </h1>
 
-          <p className="text-lg lg:text-xl text-brand-gray-dark leading-relaxed max-w-lg font-medium">
+          <p className="text-lg lg:text-lg text-brand-gray-dark leading-relaxed max-w-lg font-medium">
             Diseñamos e implementamos arquitecturas robustas que conectan <strong className="text-brand-black font-extrabold">Salesforce, SAP, Slack y Shopify</strong>. Automatizando orgánicamente los flujos críticos de las empresas más innovadoras e importantes.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto pt-4">
-            <button className="w-full sm:w-auto px-9 py-4 rounded-full bg-brand-black text-white font-bold text-lg shadow-xl shadow-brand-black/20 hover:bg-brand-teal hover:shadow-brand-teal/30 transition-all duration-300 hover:-translate-y-1">
+          <div className="!mt-4 flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto pt-4">
+            <button className="w-full sm:w-auto px-6 py-3 rounded-full bg-brand-black text-white font-bold text-lg shadow-xl shadow-brand-black/20 hover:bg-brand-teal hover:shadow-brand-teal/30 transition-all duration-300 hover:-translate-y-1">
               Agendar Consultoría
             </button>
-            <button className="w-full sm:w-auto px-9 py-4 rounded-full bg-white text-brand-black font-bold text-lg shadow-sm border-2 border-slate-100 hover:border-brand-teal hover:text-brand-teal transition-all duration-300 hover:-translate-y-1">
+            <button className="w-full sm:w-auto px-6 py-3 rounded-full bg-white text-brand-black font-bold text-lg shadow-sm border-2 border-slate-100 hover:border-brand-teal hover:text-brand-teal transition-all duration-300 hover:-translate-y-1">
               Explorar Soluciones
             </button>
           </div>
 
-          <div className="pt-10 w-full">
+          <div className="!mt-4 pt-10 w-full">
             <p className="text-xs font-bold text-brand-gray mb-6 uppercase tracking-widest">Tecnologías Core</p>
             <div className="flex flex-wrap items-center gap-6 lg:gap-6 opacity-75 grayscale hover:grayscale-0 transition-all duration-500">
 
@@ -78,10 +78,11 @@ export default function Hero() {
 
           {/* Holograma 1: Pantalla Tecnológica (Salesforce) Mirrored (Glass/HUD mode) */}
           <div className="absolute top-[10%] lg:top-[12%] left-0 lg:-left-20 z-20 animate-float">
-            <div
-              className="w-[250px] bg-[#00a1e0]/[0.02] backdrop-blur-[2px] p-4 border-[0.5px] border-[#00a1e0]/50 shadow-[0_0_15px_rgba(0,161,224,0.15),inset_0_0_15px_rgba(0,161,224,0.1)] flex flex-col gap-3 overflow-hidden rounded-[2px]"
-              style={{ transform: "perspective(1000px) rotateY(165deg) rotateX(8deg)" }}
-            >
+            <div className="scale-[0.55] sm:scale-75 lg:scale-100 origin-top-left transition-transform">
+              <div
+                className="w-[250px] bg-[#00a1e0]/[0.02] backdrop-blur-[2px] p-4 border-[0.5px] border-[#00a1e0]/50 shadow-[0_0_15px_rgba(0,161,224,0.15),inset_0_0_15px_rgba(0,161,224,0.1)] flex flex-col gap-3 overflow-hidden rounded-[2px]"
+                style={{ transform: "perspective(1000px) rotateY(165deg) rotateX(8deg)" }}
+              >
               {/* Esquinas HUD abstractas */}
               <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#00a1e0]/80"></div>
               <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#00a1e0]/80"></div>
@@ -120,14 +121,16 @@ export default function Hero() {
                 <span className="text-[#00a1e0] drop-shadow-md">STS: OK</span>
               </div>
             </div>
+            </div>
           </div>
 
           {/* Holograma 2: Pantalla Tecnológica (SAP) Mirrored (Glass/HUD mode) */}
           <div className="absolute bottom-[10%] right-0 lg:-right-20 z-20 animate-float-delayed">
-            <div
-              className="w-[250px] bg-[#008fd3]/[0.02] backdrop-blur-[2px] p-4 border-[0.5px] border-[#008fd3]/50 shadow-[0_0_15px_rgba(0,143,211,0.15),inset_0_0_15px_rgba(0,143,211,0.1)] flex flex-col gap-3 overflow-hidden rounded-[2px]"
-              style={{ transform: "perspective(1000px) rotateY(195deg) rotateX(5deg) rotateZ(2deg)" }}
-            >
+            <div className="scale-[0.55] sm:scale-75 lg:scale-100 origin-bottom-right transition-transform">
+              <div
+                className="w-[250px] bg-[#008fd3]/[0.02] backdrop-blur-[2px] p-4 border-[0.5px] border-[#008fd3]/50 shadow-[0_0_15px_rgba(0,143,211,0.15),inset_0_0_15px_rgba(0,143,211,0.1)] flex flex-col gap-3 overflow-hidden rounded-[2px]"
+                style={{ transform: "perspective(1000px) rotateY(195deg) rotateX(5deg) rotateZ(2deg)" }}
+              >
               {/* Esquinas HUD abstractas */}
               <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-[#008fd3]/80"></div>
               <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-[#008fd3]/80"></div>
@@ -175,14 +178,16 @@ export default function Hero() {
                 SYS_REQ: OPTIMAL
               </div>
             </div>
+            </div>
           </div>
 
           {/* Holograma 3: Pantalla Tecnológica (Shopify) Mirrored (Glass/HUD mode) */}
           <div className="absolute top-[2%] lg:top-[5%] right-4 lg:-right-[100px] z-20 animate-float" style={{ animationDelay: '1.5s' }}>
-            <div
-              className="w-[230px] bg-[#95bf47]/[0.02] backdrop-blur-[2px] p-4 border-[0.5px] border-[#95bf47]/50 shadow-[0_0_15px_rgba(149,191,71,0.15),inset_0_0_15px_rgba(149,191,71,0.1)] flex flex-col gap-2 overflow-hidden rounded-[2px]"
-              style={{ transform: "perspective(1000px) rotateY(200deg) rotateX(-8deg)" }}
-            >
+            <div className="scale-[0.55] sm:scale-75 lg:scale-100 origin-top-right transition-transform">
+              <div
+                className="w-[230px] bg-[#95bf47]/[0.02] backdrop-blur-[2px] p-4 border-[0.5px] border-[#95bf47]/50 shadow-[0_0_15px_rgba(149,191,71,0.15),inset_0_0_15px_rgba(149,191,71,0.1)] flex flex-col gap-2 overflow-hidden rounded-[2px]"
+                style={{ transform: "perspective(1000px) rotateY(200deg) rotateX(-8deg)" }}
+              >
               {/* Esquinas HUD abstractas */}
               <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#95bf47]/80"></div>
               <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#95bf47]/80"></div>
@@ -223,14 +228,16 @@ export default function Hero() {
                 <div className="text-[6px] font-mono text-[#95bf47]/70 text-right mt-1 drop-shadow-md">TGT VOLUME: 88%</div>
               </div>
             </div>
+            </div>
           </div>
 
           {/* Holograma 4: Pantalla Tecnológica (Slack) Mirrored (Glass/HUD mode) */}
           <div className="absolute bottom-[2%] lg:bottom-[8%] left-2 lg:-left-[90px] z-20 animate-float-delayed" style={{ animationDelay: '2.5s' }}>
-            <div
-              className="w-[240px] bg-[#e01e5a]/[0.02] backdrop-blur-[2px] p-4 border-[0.5px] border-[#e01e5a]/50 shadow-[0_0_15px_rgba(224,30,90,0.15),inset_0_0_15px_rgba(224,30,90,0.1)] flex flex-col gap-2 overflow-hidden rounded-[2px]"
-              style={{ transform: "perspective(1000px) rotateY(150deg) rotateX(5deg)" }}
-            >
+            <div className="scale-[0.55] sm:scale-75 lg:scale-100 origin-bottom-left transition-transform">
+              <div
+                className="w-[240px] bg-[#e01e5a]/[0.02] backdrop-blur-[2px] p-4 border-[0.5px] border-[#e01e5a]/50 shadow-[0_0_15px_rgba(224,30,90,0.15),inset_0_0_15px_rgba(224,30,90,0.1)] flex flex-col gap-2 overflow-hidden rounded-[2px]"
+                style={{ transform: "perspective(1000px) rotateY(150deg) rotateX(5deg)" }}
+              >
               {/* Esquinas HUD abstractas */}
               <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-[#e01e5a]/80"></div>
               <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-[#e01e5a]/80"></div>
@@ -273,6 +280,7 @@ export default function Hero() {
                   </div>
                 </div>
               </div>
+            </div>
             </div>
           </div>
 

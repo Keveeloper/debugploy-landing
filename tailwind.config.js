@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        google: ['"Google Sans Code"', 'monospace'],
+      },
       colors: {
         brand: {
           teal: '#259ca7',
