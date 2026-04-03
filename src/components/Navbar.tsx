@@ -47,13 +47,7 @@ export default function Navbar() {
         {/* Espacio para el Logo (Izquierda) */}
         <div className="flex items-center justify-start h-full">
           <a href="/" className="text-2xl font-extrabold tracking-tight text-slate-900 flex items-center gap-2 group z-50 focus:outline-none">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-teal text-white shadow-lg shadow-brand-teal/20 transition-all duration-300 group-hover:bg-brand-teal-dark group-hover:scale-105 group-hover:rotate-3">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </span>
-            {/* También cambiamos un poco el degradado de Debugploy para que use los gris oscuros requeridos */}
-            <span className="bg-gradient-to-r from-brand-black to-brand-gray-dark bg-clip-text text-transparent">Debugploy</span>
+            <img src="/dbp-logo.png" alt="Logo de Debugploy" className="h-[50px] w-auto object-contain" />
           </a>
         </div>
 

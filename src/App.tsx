@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Integrations from './components/Integrations';
 import Clients from './components/Clients';
+import Automations from './components/Automations';
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
       <Hero />
       <Integrations />
       <Clients />
+      <Automations />
     </div>
   )
 }
