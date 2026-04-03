@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Integrations from './components/Integrations';
+import Clients from './components/Clients';
 
 export default function App() {
   return (
@@ -8,9 +9,7 @@ export default function App() {
       <Navbar />
       <Hero />
       <Integrations />
-      
-      {/* Scroll spacer temporal para debug del layout final */}
-      <div className="h-[50vh] bg-brand-black w-full"></div>
+      <Clients />
     </div>
   )
 }
