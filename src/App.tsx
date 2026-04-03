@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import Integrations from './components/Integrations';
 import Clients from './components/Clients';
 import Automations from './components/Automations';
+import Cta from './components/Cta';
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       <Integrations />
       <Clients />
       <Automations />
+      <Cta />
     </div>
   )
 }
