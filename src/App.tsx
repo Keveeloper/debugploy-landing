@@ -4,6 +4,7 @@ import Integrations from './components/Integrations';
 import Clients from './components/Clients';
 import Automations from './components/Automations';
 import Cta from './components/Cta';
+import Footer from './components/Footer';
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <Clients />
       <Automations />
       <Cta />
+      <Footer />
     </div>
   )
 }
