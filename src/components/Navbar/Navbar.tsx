@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const MENU_DATA = [
   {
     title: 'Integraciones',
     options: [
-      { name: 'Salesforce CRM', desc: 'Soluciones enterprise líderes integradas.', href: '#' },
+      { name: 'Salesforce CRM', desc: 'Soluciones enterprise líderes integradas.', href: '/integraciones/salesforce' },
       { name: 'SAP ERP', desc: 'Conectividad empresarial sin fisuras.', href: '#' },
       { name: 'Shopify E-commerce', desc: 'Potencia tus ventas y logística online.', href: '#' }
     ]
@@ -46,9 +47,9 @@ export default function Navbar() {
 
         {/* Espacio para el Logo (Izquierda) */}
         <div className="flex items-center justify-start h-full">
-          <a href="/" className="text-2xl font-extrabold tracking-tight text-slate-900 flex items-center gap-2 group z-50 focus:outline-none">
+          <Link to="/" className="text-2xl font-extrabold tracking-tight text-slate-900 flex items-center gap-2 group z-50 focus:outline-none">
             <img src="/dbp-logo.png" alt="Logo de Debugploy" className="h-[50px] w-auto object-contain" />
-          </a>
+          </Link>
         </div>
 
         {/* Menú Desktop con Megamenú (Centro) */}
@@ -75,9 +76,9 @@ export default function Navbar() {
 
                   <div className="relative z-10 flex flex-col pt-2 pb-1 gap-1">
                     {item.options.map((option) => (
-                      <a
+                      <Link
                         key={option.name}
-                        href={option.href}
+                        to={option.href}
                         className="p-3.5 rounded-xl hover:bg-slate-50 transition-colors duration-200 flex flex-col group/item"
                       >
                         <span className="text-slate-900 font-bold group-hover/item:text-brand-teal flex items-center gap-2">
@@ -87,7 +88,7 @@ export default function Navbar() {
                           </svg>
                         </span>
                         <span className="text-[13px] text-slate-500 mt-0.5 font-medium leading-snug">{option.desc}</span>
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -149,14 +150,15 @@ export default function Navbar() {
                 >
                   <div className="overflow-hidden flex flex-col gap-1.5">
                     {item.options.map((option) => (
-                      <a
+                      <Link
                         key={option.name}
-                        href={option.href}
+                        to={option.href}
+                        onClick={() => setIsOpen(false)}
                         className="pl-4 py-2 border-l-2 border-slate-100 hover:border-brand-teal group/link focus:outline-none focus:border-brand-teal"
                       >
                         <span className="block font-bold text-[15px] text-slate-700 group-hover/link:text-brand-teal transition-colors">{option.name}</span>
                         <span className="block text-xs font-medium text-slate-500 mt-0.5">{option.desc}</span>
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
