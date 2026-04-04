@@ -5,7 +5,7 @@ const MENU_DATA = [
   {
     title: 'Integraciones',
     options: [
-      { name: 'Salesforce CRM', desc: 'Soluciones enterprise líderes integradas.', href: '/integraciones/salesforce' },
+      { name: 'Salesforce CRM', desc: 'Soluciones enterprise líderes integradas.', href: '/integrations/salesforce' },
       { name: 'SAP ERP', desc: 'Conectividad empresarial sin fisuras.', href: '#' },
       { name: 'Shopify E-commerce', desc: 'Potencia tus ventas y logística online.', href: '#' }
     ]
@@ -39,6 +39,7 @@ const MENU_DATA = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeMobileMenu, setActiveMobileMenu] = useState<string | null>(null);
+  const [activeDesktopMenu, setActiveDesktopMenu] = useState<string | null>(null);
 
   return (
     <nav className="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-xl border-b border-slate-200/40 shadow-[0_1px_3px_rgba(0,0,0,0.02)]">
@@ -55,35 +56,42 @@ export default function Navbar() {
         {/* Menú Desktop con Megamenú (Centro) */}
         <div className="hidden lg:flex h-full items-center justify-center gap-2 text-[15px] font-semibold text-slate-600">
           {MENU_DATA.map((item) => (
-            <div key={item.title} className="group relative flex h-full items-center">
+            <div 
+              key={item.title} 
+              className="relative flex h-full items-center"
+              onMouseEnter={() => setActiveDesktopMenu(item.title)}
+              onMouseLeave={() => setActiveDesktopMenu(null)}
+            >
               {/* Botón Principal del Item */}
-              <button className="px-5 py-2.5 rounded-full hover:bg-slate-100/80 hover:text-brand-teal transition-all duration-300 relative flex items-center gap-1.5 focus:outline-none">
+              <button 
+                className={`px-5 py-2.5 rounded-full transition-all duration-300 relative flex items-center gap-1.5 focus:outline-none ${activeDesktopMenu === item.title ? 'bg-slate-100/80 text-brand-teal' : 'hover:bg-slate-100/80 hover:text-brand-teal'}`}
+              >
                 <span className="relative z-10">{item.title}</span>
-                <svg className="relative z-10 w-3.5 h-3.5 opacity-60 group-hover:rotate-180 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className={`relative z-10 w-3.5 h-3.5 opacity-60 transition-transform duration-300 ${activeDesktopMenu === item.title ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                 </svg>
                 {/* Línea animada inferior (dentro del botón) */}
-                <span className="absolute bottom-1.5 left-1/2 w-4/5 h-[2px] bg-brand-teal -translate-x-1/2 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center rounded-full"></span>
+                <span className={`absolute bottom-1.5 left-1/2 h-[2px] bg-brand-teal -translate-x-1/2 transition-all duration-300 origin-center rounded-full ${activeDesktopMenu === item.title ? 'w-4/5 scale-x-100' : 'w-4/5 scale-x-0'}`}></span>
               </button>
 
               {/* Contenido del Megamenú: top-full está garantizado exacto al borde */}
-              <div className="absolute top-full left-1/2 -translate-x-1/2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 translate-y-3 group-hover:translate-y-0">
+              <div 
+                className={`absolute top-full left-1/2 -translate-x-1/2 transition-all duration-300 ${activeDesktopMenu === item.title ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none translate-y-3'}`}
+              >
                 {/* Wrapper decorativo sutil en la capa superior (sin pt extra ya que empieza en el filo) */}
                 <div className="w-[340px] bg-white rounded-b-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.15)] border-x border-b border-slate-100/80 p-3 relative overflow-hidden text-left translate-y-[1px]">
-
-                  {/* Foco de luz color brand-teal-light */}
-                  {/* <div className="absolute -top-10 -right-10 w-32 h-32 bg-brand-teal-light rounded-full blur-[40px] opacity-60 z-0 pointer-events-none"></div> */}
 
                   <div className="relative z-10 flex flex-col pt-2 pb-1 gap-1">
                     {item.options.map((option) => (
                       <Link
                         key={option.name}
                         to={option.href}
-                        className="p-3.5 rounded-xl hover:bg-slate-50 transition-colors duration-200 flex flex-col group/item"
+                        onClick={() => setActiveDesktopMenu(null)}
+                        className="p-3.5 rounded-xl hover:bg-slate-50 transition-colors duration-200 flex flex-col group"
                       >
-                        <span className="text-slate-900 font-bold group-hover/item:text-brand-teal flex items-center gap-2">
+                        <span className="text-slate-900 font-bold group-hover:text-brand-teal flex items-center gap-2">
                           {option.name}
-                          <svg className="w-4 h-4 opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-200 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <svg className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                           </svg>
                         </span>

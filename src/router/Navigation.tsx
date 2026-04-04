@@ -10,7 +10,7 @@ const Navigation = () => {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
-          <Route path="integraciones/salesforce" element={<Salesforce />} />
+          <Route path="integrations/salesforce" element={<Salesforce />} />
         </Route>
       </Routes>
     </BrowserRouter>
