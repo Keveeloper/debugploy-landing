@@ -27,11 +27,21 @@ export default {
         'float-delayed': {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-15px)' },
-        }
+        },
+        marquee: {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-50%)' },
+        },
+        'marquee-reverse': {
+          from: { transform: 'translateX(-50%)' },
+          to: { transform: 'translateX(0)' },
+        },
       },
       animation: {
         float: 'float 6s ease-in-out infinite',
         'float-delayed': 'float-delayed 7s ease-in-out 3s infinite',
+        marquee: 'marquee 38s linear infinite',
+        'marquee-reverse': 'marquee-reverse 30s linear infinite',
       }
     },
   },
